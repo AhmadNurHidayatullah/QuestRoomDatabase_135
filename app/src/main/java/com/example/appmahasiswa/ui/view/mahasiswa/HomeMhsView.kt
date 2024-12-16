@@ -12,7 +12,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
@@ -47,7 +49,7 @@ fun HomeMhsView(
     // ViewModel untuk data mahasiswa
     viewModel: HomeMhsViewModel = viewModel(factory = PenyediaViewModel.Factory),
     onDetailClick: (String) -> Unit, // Klik detail menerima parameter String (nim),
-    onAddMhs: () -> Unit = { }, // Klik tambah mahasiswa tanpa parameter
+    onAddMhs: () -> Unit = { },
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -210,6 +212,39 @@ fun CardMhs(
                 Spacer(modifier = Modifier.padding(4.dp))
                 Text(
                     text = mhs.kelas,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(imageVector = Icons.Filled.Face, contentDescription = "")
+                Spacer(modifier = Modifier.padding(4.dp))
+                Text(
+                    text = mhs.jenisKelamin,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(imageVector = Icons.Filled.DateRange, contentDescription = "")
+                Spacer(modifier = Modifier.padding(4.dp))
+                Text(
+                    text = mhs.angkatan,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(imageVector = Icons.Filled.LocationOn, contentDescription = "")
+                Spacer(modifier = Modifier.padding(4.dp))
+                Text(
+                    text = mhs.alamat,
                     fontWeight = FontWeight.Bold,
                 )
             }

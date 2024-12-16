@@ -22,7 +22,6 @@ class MainActivity : ComponentActivity() {
             APPMahasiswaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     PengelolaHalaman(
-
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
